@@ -86,6 +86,7 @@
     "login": "Inloggen",
     "loginDescription": "Voer je gegevens in om door te gaan",
     "loginDescriptionOAuth": "Log in met je account om door te gaan",
+    "accessDenied": "Dit account mag hier niet inloggen. Vraag een beheerder om toegang.",
     "register": "Registreren",
     "registerDescription": "Maak een account aan om te beginnen",
     "logout": "Uitloggen",

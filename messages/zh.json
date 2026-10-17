@@ -86,6 +86,7 @@
     "login": "登录",
     "loginDescription": "输入您的凭据以继续",
     "loginDescriptionOAuth": "使用您的账户登录以继续",
+    "accessDenied": "此账户无权在此登录。请联系管理员获取访问权限。",
     "register": "注册",
     "registerDescription": "创建账户以开始使用",
     "logout": "退出登录",

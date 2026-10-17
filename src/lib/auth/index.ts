@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { isUniqueConstraintViolation } from "@/lib/db-errors";
 import { getConfig } from "@/lib/config";
 import { initializePlugins, getAuthPlugin } from "@/lib/plugins";
+import { isSignInAllowed } from "@/lib/auth/access";
 import type { Adapter, AdapterUser } from "next-auth/adapters";
 
 // Initialize plugins before use
@@ -151,6 +152,17 @@ async function buildAuthConfig() {
       error: "/login",
     },
     callbacks: {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      async signIn({ user, account, profile }: { user: any; account?: any; profile?: any }) {
+        // Credentials accounts are gated by allowRegistration instead
+        if (account?.type === "credentials") {
+          return true;
+        }
+        return isSignInAllowed({
+          email: user?.email,
+          githubUsername: account?.provider === "github" ? profile?.login : undefined,
+        });
+      },
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       async jwt({ token, user, trigger }: { token: any; user?: any; trigger?: string }) {
         // On sign in, look up the actual database user by email to ensure correct ID

@@ -86,6 +86,7 @@
     "login": "Anmelden",
     "loginDescription": "Geben Sie Ihre Anmeldedaten ein, um fortzufahren",
     "loginDescriptionOAuth": "Melden Sie sich mit Ihrem Konto an, um fortzufahren",
+    "accessDenied": "Dieses Konto darf sich hier nicht anmelden. Bitten Sie einen Administrator um Zugriff.",
     "register": "Registrieren",
     "registerDescription": "Erstellen Sie ein Konto, um loszulegen",
     "logout": "Abmelden",

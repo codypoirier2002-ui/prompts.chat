@@ -10,7 +10,12 @@ export const metadata: Metadata = {
   description: "Login to your account",
 };
 
-export default async function LoginPage() {
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>;
+}) {
+  const { error } = await searchParams;
   const t = await getTranslations("auth");
   const config = await getConfig();
   const providers = getConfiguredProviderIds(config);
@@ -28,6 +33,11 @@ export default async function LoginPage() {
             {hasOnlyCredentials ? t("loginDescription") : t("loginDescriptionOAuth")}
           </p>
         </div>
+        {error === "AccessDenied" && (
+          <p role="alert" className="rounded-md border border-destructive/50 bg-destructive/10 p-3 text-center text-xs text-destructive">
+            {t("accessDenied")}
+          </p>
+        )}
         <div className="border rounded-lg p-4">
           <AuthContent providers={providers} mode="login" useCloneBranding={useCloneBranding} providerDisplayNames={displayNames} providerLogos={logos} />
         </div>

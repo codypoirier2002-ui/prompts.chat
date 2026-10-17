@@ -29,6 +29,8 @@ dist
 # Docker
 compose.yml
 docker-compose*.yml
+# Self-hosting stack; its .env is never needed inside the image
+deploy
 
 # Development files
 .github

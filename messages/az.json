@@ -86,6 +86,7 @@
     "login": "Daxil ol",
     "loginDescription": "Davam etmək üçün məlumatlarınızı daxil edin",
     "loginDescriptionOAuth": "Davam etmək üçün hesabınızla daxil olun",
+    "accessDenied": "Bu hesabın burada daxil olmasına icazə verilmir. Giriş üçün administratora müraciət edin.",
     "register": "Qeydiyyat",
     "registerDescription": "Başlamaq üçün hesab yaradın",
     "logout": "Çıxış",

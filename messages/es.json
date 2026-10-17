@@ -86,6 +86,7 @@
     "login": "Iniciar sesión",
     "loginDescription": "Ingresa tus credenciales para continuar",
     "loginDescriptionOAuth": "Inicia sesión con tu cuenta para continuar",
+    "accessDenied": "Esta cuenta no tiene permiso para iniciar sesión aquí. Pide acceso a un administrador.",
     "register": "Registrarse",
     "registerDescription": "Crea una cuenta para comenzar",
     "logout": "Cerrar sesión",

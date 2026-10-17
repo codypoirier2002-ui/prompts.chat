@@ -1,20 +1,17 @@
 import { defineConfig } from "@/lib/config";
 
 // Set to true to use clone branding (hide prompts.chat repo branding)
-const useCloneBranding = false;
+const useCloneBranding = true;
 
 export default defineConfig({
   // Branding - customize for white-label
   branding: {
-    name: "prompts.chat",
-    logo: "/logo.svg",
-    logoDark: "/logo-dark.svg",
-    favicon: "/logo.svg",
-    description: "Collect, organize, and share AI prompts",
-
-    // Delete this if useCloneBranding is true
-    appStoreUrl: "https://apps.apple.com/tr/app/prompts-chat/id6756895736",
-    chromeExtensionUrl: "https://chromewebstore.google.com/detail/promptschat/eemdohkhbaifiocagjlhibfbhamlbeej",
+    // Name and description can also be set at runtime via PCHAT_NAME / PCHAT_DESCRIPTION
+    name: "My Prompt Library",
+    logo: "/brand/logo.svg",
+    logoDark: "/brand/logo-dark.svg",
+    favicon: "/brand/logo.svg",
+    description: "Our team's AI prompt library",
   },
 
   // Theme - design system configuration
@@ -35,7 +32,7 @@ export default defineConfig({
   auth: {
     // Available: "credentials" | "google" | "azure" | "github" | "apple" | "oidc" | "oauth" | custom
     // Use `providers` array to enable multiple auth providers
-    providers: ["github", "google", "apple"],
+    providers: ["github"],
     // Allow public registration (only applies to credentials provider)
     allowRegistration: false,
   },
@@ -57,9 +54,9 @@ export default defineConfig({
     // Enable tags
     tags: true,
     // Enable AI-powered semantic search (requires OPENAI_API_KEY)
-    aiSearch: true,
+    aiSearch: false,
     // Enable AI-powered generation features (requires OPENAI_API_KEY)
-    aiGeneration: true,
+    aiGeneration: false,
     // Enable MCP (Model Context Protocol) features including API key generation
     mcp: true,
     // Enable comments on prompts

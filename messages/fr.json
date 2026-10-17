@@ -86,6 +86,7 @@
     "login": "Connexion",
     "loginDescription": "Entrez vos identifiants pour continuer",
     "loginDescriptionOAuth": "Connectez-vous avec votre compte pour continuer",
+    "accessDenied": "Ce compte n'est pas autorisé à se connecter ici. Demandez l'accès à un administrateur.",
     "register": "Inscription",
     "registerDescription": "Créez un compte pour commencer",
     "logout": "Déconnexion",

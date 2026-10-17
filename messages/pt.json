@@ -86,6 +86,7 @@
     "login": "Entrar",
     "loginDescription": "Digite suas credenciais para continuar",
     "loginDescriptionOAuth": "Entre com sua conta para continuar",
+    "accessDenied": "Esta conta não tem permissão para entrar aqui. Peça acesso a um administrador.",
     "register": "Cadastrar",
     "registerDescription": "Crie uma conta para começar",
     "logout": "Sair",
