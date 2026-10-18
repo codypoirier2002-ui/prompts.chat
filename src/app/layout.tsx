@@ -201,7 +201,8 @@ export default async function RootLayout({
                 <Header authProvider={config.auth.provider} allowRegistration={config.auth.allowRegistration} />
                 <main className="flex-1">{children}</main>
                 <Footer />
-                <CookieConsentBanner />
+                {/* Consent only gates Google Analytics; nothing to ask about without it */}
+                {process.env.GOOGLE_ANALYTICS_ID && <CookieConsentBanner />}
               </div>
             </>
           )}

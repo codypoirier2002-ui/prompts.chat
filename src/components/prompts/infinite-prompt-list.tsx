@@ -11,6 +11,7 @@ import { useFilterContext } from "./filter-context";
 import { PromptCard, type PromptCardProps } from "./prompt-card";
 import { WidgetCard } from "./widget-card";
 import { injectWidgets, isWidget } from "@/lib/plugins/widgets";
+import { useBranding } from "@/components/providers/branding-provider";
 
 interface InfinitePromptListProps {
   initialPrompts: PromptCardProps["prompt"][];
@@ -53,6 +54,7 @@ export function InfinitePromptList({
   filters 
 }: InfinitePromptListProps) {
   const t = useTranslations("prompts");
+  const { useCloneBranding: isCloneBranding } = useBranding();
   const _searchParams = useSearchParams();
   const { isFilterPending, setFilterPending } = useFilterContext();
   const [prompts, setPrompts] = useState(initialPrompts);
@@ -193,8 +195,9 @@ export function InfinitePromptList({
   }
 
   // Inject widgets into the prompt list (widgets decide their own injection logic)
-  // Only inject after mount to prevent hydration mismatch
-  const itemsToRender = isMounted ? injectWidgets(prompts, { filters }) : prompts;
+  // Only inject after mount to prevent hydration mismatch.
+  // Widgets are prompts.chat sponsor placements, so clones never show them.
+  const itemsToRender = isMounted && !isCloneBranding ? injectWidgets(prompts, { filters }) : prompts;
 
   return (
     <div className="space-y-4">
