@@ -86,6 +86,7 @@
     "login": "Login",
     "loginDescription": "Enter your credentials to continue",
     "loginDescriptionOAuth": "Sign in with your account to continue",
+    "accessDenied": "This account isn't allowed to sign in here. Ask an admin for access.",
     "register": "Register",
     "registerDescription": "Create an account to get started",
     "logout": "Logout",

@@ -86,6 +86,7 @@
     "login": "ログイン",
     "loginDescription": "続行するには認証情報を入力してください",
     "loginDescriptionOAuth": "アカウントでサインインして続行",
+    "accessDenied": "このアカウントではここにサインインできません。管理者にアクセスを依頼してください。",
     "register": "登録",
     "registerDescription": "アカウントを作成して始めましょう",
     "logout": "ログアウト",

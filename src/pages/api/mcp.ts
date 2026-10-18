@@ -10,6 +10,7 @@ import {
 import { z } from "zod";
 import { db } from "@/lib/db";
 import { isValidApiKeyFormat } from "@/lib/api-key";
+import { isLoginRequired } from "@/lib/auth/access";
 import { parseSkillFiles, serializeSkillFiles, sanitizeFilename, DEFAULT_SKILL_FILE } from "@/lib/skill-files";
 import appConfig from "@/../prompts.config";
 import {
@@ -1429,6 +1430,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // Authenticate user if API key is provided
   const authenticatedUser = await authenticateApiKey(apiKey);
+
+  // Private deployments: anonymous MCP access would expose the prompt library
+  if (!authenticatedUser && isLoginRequired()) {
+    res.setHeader('Cache-Control', 'no-store');
+    return res.status(401).json({
+      jsonrpc: "2.0",
+      error: { code: -32001, message: "API key required" },
+      id: null,
+    });
+  }
 
   const serverOptions: ServerOptions = { authenticatedUser };
   if (categoriesParam) {

@@ -86,6 +86,7 @@
     "login": "Giriş Yap",
     "loginDescription": "Devam etmek için bilgilerinizi girin",
     "loginDescriptionOAuth": "Devam etmek için hesabınızla giriş yapın",
+    "accessDenied": "Bu hesabın burada oturum açmasına izin verilmiyor. Erişim için bir yöneticiye başvurun.",
     "register": "Kayıt Ol",
     "registerDescription": "Başlamak için bir hesap oluşturun",
     "logout": "Çıkış Yap",

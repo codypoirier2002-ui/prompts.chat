@@ -86,6 +86,7 @@
     "login": "התחברות",
     "loginDescription": "הזן את פרטיך כדי להמשיך",
     "loginDescriptionOAuth": "התחבר עם החשבון שלך כדי להמשיך",
+    "accessDenied": "לחשבון זה אין הרשאה להתחבר כאן. בקש גישה ממנהל.",
     "register": "הרשמה",
     "registerDescription": "צור חשבון כדי להתחיל",
     "logout": "התנתקות",

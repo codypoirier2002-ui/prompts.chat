@@ -113,6 +113,16 @@ All variables are prefixed with `PCHAT_` to avoid conflicts.
 | `PCHAT_AUTH_PROVIDERS` | `auth.providers` | Providers: `github,google,credentials` | `credentials` |
 | `PCHAT_ALLOW_REGISTRATION` | `auth.allowRegistration` | Allow public signup | `true` |
 
+#### Private instances
+
+| Env Variable | Description | Default |
+|--------------|-------------|---------|
+| `PCHAT_REQUIRE_LOGIN` | Require sign-in for every page and API (MCP requires an API key) | `false` |
+| `AUTH_ALLOWED_GITHUB_USERS` | Comma-separated GitHub usernames allowed to sign in via OAuth | everyone |
+| `AUTH_ALLOWED_EMAIL_DOMAINS` | Comma-separated email domains allowed to sign in via OAuth | everyone |
+
+For a ready-made private deployment with HTTPS, see [`deploy/README.md`](deploy/README.md).
+
 #### Internationalization (`i18n.*` in prompts.config.ts)
 
 | Env Variable | Config Path | Description | Default |
