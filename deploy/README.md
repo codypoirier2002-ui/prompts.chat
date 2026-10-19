@@ -2,6 +2,8 @@
 
 This folder runs the whole thing on one VPS: Postgres, the app (built from this repo), and [Caddy](https://caddyserver.com) for automatic HTTPS. Sign-in is GitHub-only and limited to the usernames you list. Every page and API requires login.
 
+No server? See [VERCEL.md](VERCEL.md) to deploy on Vercel + Neon instead, entirely from the browser.
+
 ## 1. Server
 
 Any Linux VPS with 2 GB RAM or more will do (Hetzner CX22, DigitalOcean 2 GB, etc.). Building the app needs the memory; running it needs much less.
