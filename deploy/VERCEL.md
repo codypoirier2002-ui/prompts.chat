@@ -8,8 +8,8 @@ A private copy on Vercel's free (Hobby) plan with a free Neon Postgres database.
 
 1. Sign in at <https://vercel.com> with GitHub.
 2. **Add New → Project**, pick your `prompts.chat` fork, click **Import**.
-3. Leave the framework (Next.js) and build settings alone. `vercel.json` already runs the database migrations before each build.
-4. **Don't click Deploy yet.** Open **Environment Variables** first (step 3 below), or let the first deploy fail and redeploy after adding them. Either is fine.
+3. Leave the framework (Next.js) and build settings alone. `vercel.json` already runs the database migrations before each production build.
+4. **Don't click Deploy yet.** Open **Environment Variables** first (step 4 below), or let the first deploy fail and redeploy after adding them. Either is fine.
 
 ## 2. Create the database
 
@@ -63,6 +63,8 @@ Go to **`/admin`** → **Prompts** tab → **Import CSV** → confirm. It loads 
 ## Updating
 
 Every push to `main` redeploys automatically and applies any new migrations.
+
+Pushes to other branches create Preview deployments. They skip migrations (`vercel.json` only migrates when `VERCEL_ENV` is `production`), so an unmerged branch can never change your production database's schema.
 
 ## Troubleshooting
 
