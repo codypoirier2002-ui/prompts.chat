@@ -64,7 +64,7 @@ Go to **`/admin`** → **Prompts** tab → **Import CSV** → confirm. It loads 
 
 Every push to `main` redeploys automatically and applies any new migrations.
 
-Pushes to other branches create Preview deployments. They skip migrations (`vercel.json` only migrates when `VERCEL_ENV` is `production`), so an unmerged branch can never change your production database's schema.
+Pushes to other branches create Preview deployments. They skip migrations (`vercel.json` only migrates when `VERCEL_ENV` is `production`), so schema changes are applied only when a branch is merged into `main`. Previews still run the branch's code against the same database, since Vercel gives them the same `DATABASE_URL` by default. If you want previews fully isolated, give the Preview environment its own database (or a Neon branch) in **Settings → Environment Variables**.
 
 ## Troubleshooting
 
